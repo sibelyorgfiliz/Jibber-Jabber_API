@@ -1,4 +1,4 @@
-package com.example.jibberRest.users;
+package com.opdracht.jibberRest.users;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

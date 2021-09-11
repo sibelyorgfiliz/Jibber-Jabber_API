@@ -1,35 +1,32 @@
-package com.example.jibberRest.users;
+package com.opdracht.jibberRest.jibbers;
 
 //import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
 
-
-@Entity
+//@Entity
 @Getter
 @Setter
-//@Table
-public class User {
+public class Jibber {
 
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
-    @Column(name = "namehandle")
+    //@Column(name = "namehandle")
     private String handle;
 
-    public User() {}
+    public Jibber() {}
 
-    public User(Long id, String handle){
+    public Jibber(Long id, String handle){
         this.id = id;
         this.handle = handle;
     }
 
-    public User(String handle){
+    public Jibber(String handle){
         this.handle = handle;
     }
 

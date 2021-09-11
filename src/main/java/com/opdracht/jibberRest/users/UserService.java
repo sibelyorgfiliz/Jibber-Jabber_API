@@ -1,4 +1,4 @@
-package com.example.jibberRest.users;
+package com.opdracht.jibberRest.users;
 
 
 //import org.springframework.stereotype.Component;
