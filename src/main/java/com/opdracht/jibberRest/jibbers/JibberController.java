@@ -18,8 +18,8 @@ public class JibberController {
     }
 
     @GetMapping("/jibbers")
-    public List<Jibber> allJibber  (){
-        return jibberService.allJibbers();
+    public /*List<Jibber>*/ String allJibbers  (){
+        return "hello"; //jibberService.allJibbers();
     }
 
 

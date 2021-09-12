@@ -1,22 +1,20 @@
 package com.opdracht.jibberRest.jibbers;
 
-//import javax.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 
-//@Entity
+@Entity
 @Getter
 @Setter
 public class Jibber {
 
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    //@Column(name = "namehandle")
     private String handle;
 
     public Jibber() {}
