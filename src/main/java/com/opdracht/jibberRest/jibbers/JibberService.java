@@ -13,6 +13,7 @@ import java.util.List;
 @Service
 public class JibberService {
 
+    @Autowired
     private final JibberRepository jibberRepository;
 
     @Autowired

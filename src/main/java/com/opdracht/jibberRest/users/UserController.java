@@ -1,38 +1,47 @@
 package com.opdracht.jibberRest.users;
 
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@AllArgsConstructor
-@RequestMapping("/users")
-public class UserController implements CommandLineRunner {
-
-    private final UserService userService;
+//@RequestMapping("/users")
+public class UserController {
+   @Autowired
+    private final UserRepository userRepository;
+ /*
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private final UserService userService;
 
-    @GetMapping("/users")
-    public List<User> allUsers  (){
-        return userService.allUsers();
+  */
+
+    @Autowired
+    public UserController(UserRepository userRepository/*, UserService userService*/) {
+        this.userRepository = userRepository;
+       // this.userService = userService;
     }
 
+    @GetMapping("/users")
+    List<User> list(){
+        return userRepository.findAll();
+        //return userService.listAll();
+    }
+
+    @GetMapping("/Users/{id}")
+    User oneUser(@PathVariable Long id) {
+
+        return userRepository.findById(id).get();
+               // .orElseThrow(() -> new UserNotFoundException(id));
+    }
+/*
     @GetMapping("/users/{id}")
-    public User getTasks(@PathVariable Long id) {
+    User getById(@PathVariable Long id) {
         return userService.get(id);
     }
 
+ */
 
-    @Override
-    public void run(String... args) throws Exception {
-        String sql=("SELECT * FROM users");
-    }
 }
