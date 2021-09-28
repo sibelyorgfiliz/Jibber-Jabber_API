@@ -22,4 +22,9 @@ public class JibberServiceImpl implements JibberService {
     public List<Jibber> getAllJibbers() {
         return jibberRepository.findAll();
     }
+
+    @Override
+    public Jibber getJibber(Long id){
+        return jibberRepository.findJibberById(id);
+    }
 }

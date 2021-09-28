@@ -25,8 +25,8 @@ public class UserController {
     @GetMapping("/users/{handle}")
     User one(@PathVariable String handle) {
 
-        return repository.findUserByHandle(handle)
-                .orElseThrow(() -> new UserNotFoundException(handle));
+        return repository.findUserByHandle(handle);
+                //.orElseThrow(() -> new UserNotFoundException(handle));
     }
 
 
