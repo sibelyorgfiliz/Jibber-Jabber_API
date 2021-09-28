@@ -1,6 +1,7 @@
 package com.example.jibberRest.jibbers;
 
 
+import com.example.jibberRest.users.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +18,10 @@ public class Jibber {
     private Long id;
     private String message;
     private Date createdDate;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    User user;
 
     public Jibber() { };
 
